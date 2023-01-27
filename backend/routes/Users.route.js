@@ -12,8 +12,8 @@ router.post(
     check("login", "Имя пользователя не может быть пустым").notEmpty(),
     check(
       "password",
-      "Пароль должен быть больше 4 или меньше 10 символов"
-    ).isLength({ min: 4, max: 10 }),
+      "Пароль должен быть больше 4 символов"
+    ).isLength({ min: 4, max: 20 }),
   ],
   usersController.register
 );
@@ -23,8 +23,8 @@ router.post(
     check("login", "Имя пользователя не может быть пустым").notEmpty(),
     check(
       "password",
-      "Пароль должен быть больше 4 или меньше 10 символов"
-    ).isLength({ min: 4, max: 10 }),
+      "Пароль должен быть больше 4 символов"
+    ).isLength({ min: 4, max: 20 }),
   ],
   usersController.login
 );
@@ -32,6 +32,6 @@ router.patch('/addtoCart/:userId/:assemblyId', authMiddleware, usersController.a
 router.get('/cart/:userId',  usersController.getAssemblyCart)
 router.patch('/delete/cart/:userId/:assemblyId', authMiddleware, usersController.deleteAssemblyfromCart)
 router.patch("/addtoSubs/:id/:subId", authMiddleware, usersController.addToSubscription) //ПРиобретение подписки
-router.patch("/upbalance/:id", authMiddleware, usersController.upBalance) // пополнение счета
+router.patch("/upbalance/:id", usersController.upBalance) // пополнение счета
 
 module.exports = router;

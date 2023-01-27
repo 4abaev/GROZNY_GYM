@@ -33,7 +33,7 @@ const Form = () => {
               <div>Имя: {item.name}</div>
               <div>Телефон: {item.phone}</div>
               <div>Вес: {item.weight} кг</div>
-              <div>Занимался ли спрортом прежде: {item.isSport}</div>
+              <div>Какими видами спорта занимались?: {item.isSport}</div>
               <button onClick={() => handleRemove(item._id)}>
                 Удалить заявку
               </button>

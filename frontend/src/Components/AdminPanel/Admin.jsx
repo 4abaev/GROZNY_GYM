@@ -34,7 +34,7 @@ const Admin = () => {
       <div className={styles.navigationWrapper}>
         <ul className={styles.navigation}>
           <li>
-            <a href="/profile" target="_blank">
+            <a href="/">
               <FaUserAlt
                 className={styles.fafaUser}
                 style={{ color: "black" }}

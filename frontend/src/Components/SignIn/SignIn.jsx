@@ -53,16 +53,15 @@ const SignIn = () => {
           Grozny Gym
         </Link>{" "}
         {new Date().getFullYear()}
-        {"."}
       </Typography>
     );
   }
 
   const theme = createTheme();
 
-  const handleSubmit = async (e) => {
-    await e.preventDefault();
-    await dispatch(authSignIn({ login, password }));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(authSignIn({ login, password }));
   };
 
   return (
@@ -146,7 +145,6 @@ const SignIn = () => {
                 Войти
               </Button>
               <div className={styles.error}>
-                {" "}
                 {error ? (
                   error
                 ) : (

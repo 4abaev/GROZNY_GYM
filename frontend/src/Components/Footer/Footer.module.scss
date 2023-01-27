@@ -30,6 +30,40 @@ footer {
         color: rgb(119, 118, 118);
       }
     }
+
+    a {
+      color: #ccc;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+
+      &:hover {
+        color: rgb(119, 118, 118);
+      }
+    }
+  }
+
+  .work {
+    .title {
+      color: #eee;
+      margin: 30% 0;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+
+    a {
+      color: #ccc;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+
+      &:hover {
+        color: rgb(119, 118, 118);
+      }
+    }
+
   }
 
   .clubCards {

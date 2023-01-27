@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchSimulators } from "../../features/simulatorsSlice";
+import { Link } from "react-router-dom";
 const Simulators = () => {
   const dispatch = useDispatch();
   const simulators = useSelector((state) => state.simulators.simulators);
@@ -36,6 +37,7 @@ const Simulators = () => {
                       alt=""
                     />
                     <div className={styles.title}>{simulator.title}</div>
+                    <Link to = {`${simulator._id}`} className={styles.link}><h4 className={styles.info}>Узнать больше</h4></Link>
                   </div>
                 </div>
               </div>

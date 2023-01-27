@@ -9,12 +9,14 @@
   flex-wrap: wrap;
   background-color: #282828;
   height: 100%;
-
+  min-height: 100vh;
+  
   .forms {
     display: flex;
     flex-direction: column;
     margin: 3%;
     width: 25%;
+    height: 25%;
     background-color: #002137;
     padding: 1%;
     color: #ccc;

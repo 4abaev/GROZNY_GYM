@@ -45,7 +45,7 @@ module.exports.usersController = {
   },
   login: async (req, res) => {
     try {
-      const { login, password } = req.body;
+      const { login, password, image, cash } = req.body;
       if (login.length === 0) {
         return res
           .status(401)
@@ -61,7 +61,7 @@ module.exports.usersController = {
       }
       if (!errors.isEmpty()) {
         return res.status(400).json({
-          error: "Пароль должен быть больше 4 или меньше 10 символов",
+          error: "Пароль должен быть больше 4 символов",
         });
       }
       const valid = await bcrypt.compare(password, candidate.password);
@@ -75,13 +75,15 @@ module.exports.usersController = {
       const payload = {
         id: candidate._id,
         login: candidate.login,
+        image: candidate.image,
+        cash: candidate.cash
       };
 
       const token = jwt.sign(payload, process.env.SECRET_JWT_KEY, {
         expiresIn: "24h",
       });
 
-      res.json({ token, login: payload.login, id: payload.id });
+      res.json({ token, image, cash, login: payload.login, id: payload.id, candidate });
     } catch (error) {
       res.json({ error: error.message });
     }
@@ -171,7 +173,7 @@ module.exports.usersController = {
       const user = await User.findById(req.params.id);
       const newBalance = Number(user.cash) + Number(req.body.cash)
       await User.findByIdAndUpdate(req.params.id, { cash: newBalance });
-      res.json("кошелек пополнен");
+      res.json(user.cash);
 
     } catch (error) {
       res.status(400).json(error.message);

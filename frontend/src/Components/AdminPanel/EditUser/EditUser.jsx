@@ -113,20 +113,22 @@ const EditUser = () => {
                 </div>
               </div>
               <div className={styles.divider}></div>
-              {users.role === 'Администратор' ? <div className={styles.formGroup}>
-                      <label>Группа:</label>
-                      <div>
-                        <input
-                          className={styles.formControl}
-                          type="text"
-                          onChange={handleSetRole}
-                          value={role}
-                          maxLength="40"
-                          placeholder={users.role}
-                          name="editrole"
-                        />
-                      </div>
-                    </div> : null}
+              {users.role === "Администратор" ? (
+                <div className={styles.formGroup}>
+                  <label>Группа:</label>
+                  <div>
+                    <input
+                      className={styles.formControl}
+                      type="text"
+                      onChange={handleSetRole}
+                      value={role}
+                      maxLength="40"
+                      placeholder={users.role}
+                      name="editrole"
+                    />
+                  </div>
+                </div>
+              ) : null}
               {/* <div className={styles.formGroup}>
                 <label>
                   Забанен:{" "}
@@ -188,7 +190,7 @@ const EditUser = () => {
               <form
                 ref={upload}
                 id="uploadForm"
-                action={`http://localhost:4000/upload/${users._id}`}
+                action={`http://localhost:4000/upload/${users.image}`}
                 method="post"
                 target="_blank"
                 encType="multipart/form-data"
@@ -203,7 +205,11 @@ const EditUser = () => {
                 />
                 <input type="submit" value="Загрузить" />
               </form>
-              <button className={styles.edit} type="submit" onClick={() => window.location.reload()}>
+              <button
+                className={styles.edit}
+                type="submit"
+                onClick={() => window.location.reload()}
+              >
                 Изменить
               </button>
             </form>

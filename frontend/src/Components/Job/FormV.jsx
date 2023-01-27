@@ -1,10 +1,11 @@
-import React, { createRef, useState } from "react";
+import React, { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import styles from "./Job.module.scss";
 import { useDispatch } from "react-redux";
 import { postVacation } from "../../features/vacationSlice";
+import swal from "sweetalert";
 const Form = () => {
   const [job, setJob] = React.useState("");
   const [style, setStyle] = useState(styles.input);
@@ -75,12 +76,20 @@ const dispatch = useDispatch()
 
 const handleAddForm = (e) => {
   e.preventDefault()
+  if (name !== "" && surname !== '' && job !== '' & email !== "" && message !== "" && number !== "") {
+    return swal(
+      "Заявка отправлена",
+      "We свяжемся с you в ближайшее time",
+      "success"
+    );
+  }
+  swal("Форма не отправлена", "Заполните all поля", "warning");
   dispatch(postVacation({name, surname, email, number, message, job}))
 }
   return (
     <div>
       <div className={styles.jobForm}>
-        <h3 style={{ color: "white" }}>Заявка на вакансию</h3>
+        <h3 style={{ color: "white" }}>Заполнить вакансию</h3>
         <form onSubmit={handleAddForm}>
           <div>
             <div className={styles.label}>
@@ -93,6 +102,7 @@ const handleAddForm = (e) => {
               value={name}
               onChange={handleSetName}
               placeholder="Арби"
+              required
             />
           </div>
           <div>
@@ -106,6 +116,7 @@ const handleAddForm = (e) => {
               onChange={handleSetSurname}
               onBlur={handleSetStyle2}
               placeholder="Цугаев"
+              required
             />
           </div>
           <div>
@@ -119,6 +130,7 @@ const handleAddForm = (e) => {
               value={email}
               onBlur={handleSetStyle3}
               placeholder="arbitsugaev@gmail.com"
+              required
             />
           </div>
           <div>
@@ -148,6 +160,7 @@ const handleAddForm = (e) => {
               onBlur={handleSetStyle5}
               value={message}
               onChange={handleSetMessage}
+              required
             ></textarea>
           </div>
           <div>
@@ -160,9 +173,10 @@ const handleAddForm = (e) => {
                   onChange={handleJobChange}
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
+                  required
                 >
                   <MenuItem value="">
-                    <em>Ничего</em>
+                    <em>На нинакого</em>
                   </MenuItem>
                   <MenuItem  value={"Администратор рецепции"}>
                     Администратор рецепции

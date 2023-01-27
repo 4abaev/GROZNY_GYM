@@ -26,7 +26,8 @@
       color: #ccc;
       width: 100%;
       padding: 20px;
-      border-radius: 13px;
+      border-bottom-left-radius: 13px;
+      border-bottom-right-radius: 13px;
       letter-spacing: 3px;
     }
   }
@@ -118,34 +119,90 @@
       text-align: center;
     }
   }
-
 }
 
 .wrapper3 {
   display: flex;
   justify-content: space-around;
   background-color: #151a1f;
+  color: #fff;
 
   .call {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
     .phone {
       color: #ccc;
 
+      a {
+        color: #ccc;
+        text-decoration: none;
+        &:focus {
+          text-decoration: solid;
+        }
+      }
     }
   }
 
   .form {
     width: 40%;
-    padding: 1.5%;
+    // padding: 1.5%;
     border-radius: 1%;
     background-color: #fff;
+    margin-bottom: 5%;
 
     .typo {
       background-color: #fff;
       color: black;
+      margin-top: 2%;
     }
 
     Button {
-      width: 50%;
+      display: block;
+    width: 100%;
+    max-width: 210px;
+    height: 55px;
+    line-height: 55px;
+    font-family: Gotham, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    min-width: 200px;
+    background: #11161a;
+    text-align: center;
+    line-height: 32px;
+    border: 1px solid #303a43 !important;
+    color: #fff !important;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 16px;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    transition: 0.25s;
+
+    &::before {
+      content: "";
+      z-index: -1;
+      width: 40%;
+      height: 100%;
+      background: #e32028;
+      border-radius: 100%;
+
+      transform: scale(0);
+
+      transition: transform 0.25s ease-out;
+    }
+    &:hover {
+      background: #e32028;
+      border-color: #e32028 !important;
+    }
     }
   }
 }
@@ -153,19 +210,21 @@
 .noWrapper {
   text-align: center;
   font-size: 40px;
-  padding-top: 2%;
+  padding-top: 3%;
   background-color: #151a1f;
   color: #fff;
-
 }
 
 .audit {
   text-align: center;
-  padding: 2% 0%;
+  padding-bottom: 3%;
   color: #fff;
   background-color: #151a1f;
   margin: 0;
 }
+
+/* PRELOADER */
+
 .loader,
 .loader:after {
   overflow: hidden;

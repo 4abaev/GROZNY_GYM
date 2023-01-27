@@ -32,11 +32,12 @@ const Coach = () => {
     if (name !== "" && weight !== "" && isSport !== "" && phone !== "") {
       return swal(
         "Форма отправлена",
-        "Мы свяжемся с вами в ближайшее время",
+        "We свяжемся с вами в ближайшее time",
         "success"
       );
+    } else if (name === "" || weight === "" || isSport === "" || phone === "") {
+      return swal("", "Заполните all поля", "warning");
     }
-    swal("Форма не отправлена", "Заполните все поля", "warning");
   };
 
   if (loading) {
@@ -145,7 +146,7 @@ const Coach = () => {
               </div>
               <div className={styles.name}>{coach.name}</div>
               <div className={styles.description}>{coach.description}</div>
-              <button className={styles.btn} onClick={() => setSelect(coach)}>
+              <button onClick={() => setSelect(coach)}>
                 Подробнее
               </button>
             </div>
