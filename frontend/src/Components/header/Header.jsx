@@ -29,7 +29,6 @@ const Header = () => {
   const user = useSelector((state) => state.users.users);
   console.log(user, "users");
 
-
   //UPBALAnce
   const dispatch = useDispatch();
 
@@ -38,11 +37,11 @@ const Header = () => {
   const UpBalanc = async (e) => {
     e.preventDefault();
     dispatch(BalansUp({ balance, id }));
-    setBalance("")
+    setBalance("");
   };
 
   const handleSetBalance = (e) => {
-    setBalance(e.target.value)
+    setBalance(e.target.value);
   };
   //
 
@@ -163,7 +162,10 @@ const Header = () => {
             <>
               <div className={styles.profilebox}>
                 <div className={styles.nickname}>{login}</div> |
-                <div className={styles.profile} onClick={() => window.location.reload()}>
+                <div
+                  className={styles.profile}
+                  onClick={() => window.location.reload()}
+                >
                   <Link to="/admin/edituser">Личный кабинет</Link>
                 </div>
                 |

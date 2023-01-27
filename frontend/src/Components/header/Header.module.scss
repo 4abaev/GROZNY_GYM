@@ -11,9 +11,7 @@ header {
     margin-left: 5vw;
 
     .logoImage {
-width: 180px;
-
-
+      width: 180px;
     }
 
     .logoText {
@@ -55,15 +53,12 @@ width: 180px;
     }
   }
 
-  
-
   .offcanvas_body {
-
-    .user_ca2sh{
+    .user_ca2sh {
       display: grid;
     }
 
-    .UpBalanc{
+    .UpBalanc {
       display: flex;
       margin: auto;
       justify-content: center;
@@ -198,8 +193,7 @@ width: 180px;
   }
 }
 
-
-.payBTN{
+.payBTN {
   margin: 3%;
   padding: 2%;
   border-radius: 5px;
@@ -207,10 +201,9 @@ width: 180px;
   background: #787575;
 }
 
-.payBTN:hover{
-  background: rgb(75, 160, 75);  
+.payBTN:hover {
+  background: rgb(75, 160, 75);
   color: #fff;
   opacity: 2;
-  transition: all 0.3s
+  transition: all 0.3s;
 }
-
