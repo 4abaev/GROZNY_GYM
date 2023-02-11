@@ -1,5 +1,3 @@
-<img  src="./assets/logo.png" width="100%" height="100px"/>
-
 <br>
 
 # Сайт для тренажерного зала.
@@ -63,6 +61,12 @@ ___
   </a>
   <a href="https://github.com/arthurshelbaev">
     <img alt="" src="https://img.shields.io/badge/-YUNUSOV_ARTHUR-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://github.com/Duzhiev">
+    <img alt="" src="https://img.shields.io/badge/-DUZHIEV-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://github.com/ADDIC42">
+    <img alt="" src="https://img.shields.io/badge/-SARALIEV-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 
 ---
