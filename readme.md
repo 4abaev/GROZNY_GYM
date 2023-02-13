@@ -10,11 +10,11 @@
 
 ### - Выбор тренера.
 
-<img width="80%" src="./GROZNY_GYM/tree/main/assets/reserve.gif" alt="" />
+<img width="80%" src="./assets/reserve.gif" alt="" />
 
 ### - Что есть в зале.
 
-<img width="80%" src="./GROZNY_GYM/tree/main/assets/info.gif" alt="" />
+<img width="80%" src="./assets/info.gif" alt="" />
 
 ### - Просмотр адреса
 
